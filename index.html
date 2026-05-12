@@ -229,7 +229,7 @@ a{color:#fff;display:block;margin:6px 0;}
   </div>
 
   <div id="c4-act" class="subsection active-sub">
-    <a href="https://drive.google.com/file/d/1BJoqCJSpon2xcTP9RAQWiuM8cqzt7bcU/view?usp=sharing"">Month Season</a>
+    <a href="https://drive.google.com/file/d/1BJoqCJSpon2xcTP9RAQWiuM8cqzt7bcU/view?usp=sharing">Month Season</a>
     <a href="https://drive.google.com/file/d/1GcgoIeSqHqz5CRXTYIm5MZ49Gm5EVKDN/view?usp=sharing">Looping 2&3</a>
     <a href="https://drive.google.com/file/d/11hHTVig3NR7dRPIzjtdMbtfi1lortboj/view?usp=sharing">SumPositiveNumbers</a>
     <a href="https://drive.google.com/file/d/1QJitptP-HQNp74VGi8XtX7DYpeJw_UNn/view?usp=sharing">Branching</a>
@@ -258,7 +258,7 @@ a{color:#fff;display:block;margin:6px 0;}
   </div>
 
   <div id="c5-act" class="subsection active-sub">
-    <a href="https://drive.google.com/file/d/1MtE7222I5xuOfIkZysTDlursRdGBrfVi/view?usp=sharing%22target=%22_blank">ShirtTest</a>
+    <a href="https://drive.google.com/file/d/1MtE7222I5xuOfIkZysTDlursRdGBrfVi/view?usp=sharing">ShirtTest</a>
     <a href="https://drive.google.com/file/d/1hH-cVI8G657iWkpJ004L8g28m78Up8T1/view?usp=sharing">CustomerClassandTest</a>
     <a href="https://drive.google.com/file/d/1P9jX-Y4oUntuC2sLMS2t9un7gxYFsxdN/view?usp=sharing">Payment</a>
     <a href="https://drive.google.com/file/d/1NhXzX8XWRsiRQs6HpxdQh6KUKGrzOnGy/view?usp=sharing">OrderForm</a>
@@ -286,6 +286,31 @@ function show(id){
   });
 
   document.getElementById(id).classList.add('active');
+
+  <script>
+function show(id){
+  document.querySelectorAll('.section').forEach(section=>{
+    section.classList.remove('active');
+  });
+
+  document.getElementById(id).classList.add('active');
+}
+
+function showSub(id){
+
+  // hide all subsections
+  document.querySelectorAll('.subsection').forEach(sub=>{
+    sub.classList.remove('active-sub');
+  });
+
+  // show selected subsection
+  document.getElementById(id).classList.add('active-sub');
+}
+
+function toggleMode(){
+  document.body.classList.toggle("dark");
+}
+</script>
 }
 
 function toggleMode(){
