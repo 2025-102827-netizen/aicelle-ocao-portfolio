@@ -6,12 +6,7 @@
 <title>Aicelle Portfolio</title>
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family:'Segoe UI',sans-serif;
-}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',sans-serif;}
 
 body{
   background:linear-gradient(-45deg,#ffafcc,#ffc8dd,#ff99c8,#cdb4db);
@@ -45,14 +40,11 @@ body.dark{
   border-radius:20px;
   padding:25px;
   text-align:center;
-  box-shadow:0 10px 30px rgba(0,0,0,0.3);
 }
 
-body.dark .card{
-  background:rgba(0,0,0,0.4);
-}
+body.dark .card{background:rgba(0,0,0,0.4);}
 
-/* TOGGLE BUTTON */
+/* DARK MODE BUTTON */
 #modeBtn{
   position:absolute;
   top:15px;
@@ -66,122 +58,67 @@ body.dark .card{
   font-weight:bold;
 }
 
-body.dark #modeBtn{
-  background:#222;
-  color:#fff;
-}
+body.dark #modeBtn{background:#222;color:#fff;}
 
 /* PROFILE */
-.profile-container{
-  position:relative;
-  display:flex;
-  justify-content:center;
-  margin-bottom:10px;
-}
+.profile-container{display:flex;justify-content:center;margin-bottom:10px;}
 
 .profile-ring{
-  width:150px;
-  height:150px;
-  border-radius:50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:linear-gradient(45deg,#ff4d6d,#ff85a1,#cdb4db,#ff4d6d);
-  background-size:300% 300%;
-  animation:glow 4s linear infinite;
-  box-shadow:0 0 25px rgba(255,105,180,0.6);
-}
-
-@keyframes glow{
-  0%{background-position:0% 50%}
-  50%{background-position:100% 50%}
-  100%{background-position:0% 50%}
+  width:150px;height:150px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(45deg,#ff4d6d,#ff85a1,#cdb4db);
 }
 
 .profile{
-  width:120px;
-  height:120px;
-  border-radius:50%;
-  object-fit:cover;
-  border:3px solid white;
-  background:white;
+  width:120px;height:120px;border-radius:50%;
+  object-fit:cover;border:3px solid white;background:white;
 }
 
-/* HEARTS */
-.heart{
-  position:absolute;
-  width:15px;
-  height:15px;
-  background:#ff4d6d;
-  transform:rotate(45deg);
-  animation:float 6s infinite ease-in-out;
-  opacity:0.7;
-}
-
-.heart::before,
-.heart::after{
-  content:"";
-  position:absolute;
-  width:15px;
-  height:15px;
-  background:#ff4d6d;
-  border-radius:50%;
-}
-
-.heart::before{top:-7px; left:0;}
-.heart::after{left:-7px; top:0;}
-
-@keyframes float{
-  0%{transform:translateY(0) rotate(45deg);}
-  50%{transform:translateY(-20px) rotate(45deg);}
-  100%{transform:translateY(0) rotate(45deg);}
-}
-
-.name{
-  margin-top:10px;
-  font-size:26px;
-  font-weight:bold;
-}
+.name{margin-top:10px;font-size:26px;font-weight:bold;}
 
 .nav{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:8px;
-  margin:15px 0;
+  display:flex;flex-wrap:wrap;justify-content:center;
+  gap:8px;margin:15px 0;
+
+
 }
 
 .nav button{
-  padding:8px 12px;
-  border:none;
-  border-radius:10px;
-  cursor:pointer;
-  background:rgba(255,255,255,0.25);
-  color:white;
+  padding:8px 12px;border:none;border-radius:10px;
+  cursor:pointer;background:rgba(255,255,255,0.25);color:white;
 }
 
+/* MAIN SECTIONS */
 .section{
-  display:none;
-  text-align:left;
-  margin-top:15px;
-  padding:15px;
-  border-radius:12px;
+  display:none;text-align:left;margin-top:15px;
+  padding:15px;border-radius:12px;
   background:rgba(255,255,255,0.15);
 }
 
-body.dark .section{
-  background:rgba(0,0,0,0.3);
+body.dark .section{background:rgba(0,0,0,0.3);}
+.active{display:block}
+
+/* SUB NAV */
+.subnav{
+  margin:10px 0;
+  display:flex;
+  gap:10px;
 }
 
-.active{
-  display:block;
+.subnav button{
+  padding:6px 10px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  background:rgba(255,255,255,0.3);
+  color:white;
 }
 
-a{
-  color:#fff;
-  display:block;
-  margin:8px 0;
-}
+.subsection{display:none;margin-top:10px;}
+.active-sub{display:block;}
+
+a{color:#fff;display:block;margin:6px 0;}
+
 </style>
 </head>
 
@@ -189,25 +126,17 @@ a{
 
 <div class="card">
 
-<!-- DARK MODE BUTTON -->
 <button onclick="toggleMode()" id="modeBtn">🌙</button>
 
-<!-- PROFILE -->
 <div class="profile-container">
-  <div class="heart" style="top:10px; left:40%"></div>
-  <div class="heart" style="top:30px; left:60%"></div>
-  <div class="heart" style="top:60px; left:30%"></div>
-  <div class="heart" style="top:80px; left:70%"></div>
-
   <div class="profile-ring">
-    <img class="profile" src="c:\Users\aicelle ocao\Downloads\meduh.jpg" alt="My Photo">
+    <img class="profile" src="c:\Users\aicelle ocao\Downloads\meduh.jpg">
   </div>
 </div>
 
 <h1 class="name">Hi, I'm Aicelle 👋</h1>
 <p>My Virtual portfolio for OOP 💖</p>
 
-<!-- NAV -->
 <div class="nav">
   <button onclick="show('home')">Home</button>
   <button onclick="show('c1')">Chapter 1</button>
@@ -215,46 +144,150 @@ a{
   <button onclick="show('c3')">Chapter 3</button>
   <button onclick="show('c4')">Chapter 4</button>
   <button onclick="show('c5')">Chapter 5</button>
+  <button onclick="show('reflection')">reflection</button>
 </div>
 
-<!-- SECTIONS -->
+<!-- HOME -->
 <div id="home" class="section active">
   <h3>Welcome</h3>
-    <p>Hello! My name is Ocao, Aicelle Joyce O., a first-year Bachelor of Science in Computer Engineering (BSCpE) student from Block CEIT-03-204A. I am currently taking up Object-Oriented Programming (OOP), where I am developing my skills in designing and building software solutions. This project serves as my virtual portfolio, showcasing my learning progress, projects, and growth in the field of computer engineering.
-</p></p>
-  </div>  <div id="c1" class="section">
-    <h3>Chapter 1 Activities</h3>
-    <a href="https://drive.google.com/file/d/1jjqcdxSAgNcqzBKBdqfAOZui6SF3wrXm/view?usp=sharing" target="_blank">UML</a>
-    <a href="https://drive.google.com/file/d/1Ap_v8miq62zPTTm9S8JiJ8qPzrwzMgbX/view?usp=sharing" target="_blank">PTask1</a>
-  </div>  <div id="c2" class="section">
-    <h3>Chapter 2 Activities</h3>
-    <a href="https://drive.google.com/file/d/1cGbHzt67fsLIISID663xYmFvgskBp7DK/view?usp=sharing" target="_blank">TypeCasting</a>
-    <a href="https://drive.google.com/file/d/1NjW7Z_dHcjIeYIPd0AeMx-t1_GMy6tfN/view?usp=sharing" target="_blank">Unary</a>
-    <a href="https://drive.google.com/file/d/1NMgqAs6bggejerEpPrc8Jg_ParVsdz4m/view?usp=sharing" target="_blank">LaboratoryExercisesUnary</a>
-    <a href="https://drive.google.com/file/d/1tF5r0EFyMgr2BzPOOMLysTEdQx97jz35/view?usp=sharing" target="_blank">Age</a>
-  </div>  <div id="c3" class="section">
-    <h3>Chapter 3 Activities</h3>
-    <a href="https://drive.google.com/file/d/1mUpbMxzXgtMP3k9rYCEpcD3x0FcPXftw/view?usp=sharing" target="_blank">IOActivity</a>
-    <a href="https://drive.google.com/file/d/1bicmvNZE0cYKi_e9YjblKDdSk3bTsUCf/view?usp=sharing" target="_blank">MyInfo</a>
-  </div>  <div id="c4" class="section">
-    <h3>Chapter 4 Activities</h3>
-    <a href="https://drive.google.com/file/d/1BJoqCJSpon2xcTP9RAQWiuM8cqzt7bcU/view?usp=sharing"target="_blank">MonthSeason</a>
-    <a href="https://drive.google.com/file/d/1GcgoIeSqHqz5CRXTYIm5MZ49Gm5EVKDN/view?usp=sharing"target="_blank">Looping 1</a>
-    <a href="https://drive.google.com/file/d/1fx5CqmFDY3pGI1rZGf70IkoilRygb8Rb/view?usp=sharing"target="_blank">Looping 2 3</a>
-    <a href="https://drive.google.com/file/d/11hHTVig3NR7dRPIzjtdMbtfi1lortboj/view?usp=sharing"target="_blank">SumPositiveNumbers</a>
-    <a href="https://drive.google.com/file/d/1QJitptP-HQNp74VGi8XtX7DYpeJw_UNn/view?usp=sharing"target="_blank">Branching</a>
-    <a href="https://drive.google.com/file/d/13fX9pcu6Miq_FCrRHOUk_EoKqeIPlx4n/view?usp=sharing"target="_blank">MultiElevator</a>
-</div>  <div id="c5" class="section">
-    <h3>Chapter 5 Activities</h3>
-    <a href="https://drive.google.com/file/d/1MtE7222I5xuOfIkZysTDlursRdGBrfVi/view?usp=sharing"target="_blank">ShirtTest</a>
-    <a href="https://drive.google.com/file/d/1hH-cVI8G657iWkpJ004L8g28m78Up8T1/view?usp=sharing"target="_blank">CustomerClassandTest</a>
-    <a href="https://drive.google.com/file/d/1P9jX-Y4oUntuC2sLMS2t9un7gxYFsxdN/view?usp=sharing"target="_blank">Payment</a>
-    <a href="https://drive.google.com/file/d/1NhXzX8XWRsiRQs6HpxdQh6KUKGrzOnGy/view?usp=sharing"target="_blank">OrderForm</a>
-  </div></div><script>
+  <p>Hello! My name is Ocao, Aicelle Joyce O., a first-year Bachelor of Science in Computer Engineering (BSCpE) student from Block CEIT-03-204A. I am currently taking up Object-Oriented Programming (OOP), where I am developing my skills in designing and building software solutions. This project serves as my virtual portfolio, showcasing my learning progress, projects, and growth in the field of computer engineering.</p>
+</div>
+
+<!-- CHAPTER TEMPLATE -->
+<!-- C1 -->
+<div id="c1" class="section">
+  <h3>Chapter 1</h3>
+
+  <div class="subnav">
+    <button onclick="showSub('c1-act')">Activities</button>
+    <button onclick="showSub('c1-lec')">Learning Materials</button>
+  </div>
+
+  <div id="c1-act" class="subsection active-sub">
+    <a href="https://drive.google.com/file/d/1jjqcdxSAgNcqzBKBdqfAOZui6SF3wrXm/view?usp=sharing">UML</a>
+    <a href="https://drive.google.com/file/d/1Ap_v8miq62zPTTm9S8JiJ8qPzrwzMgbX/view?usp=sharing">PTask1</a>
+  </div>
+
+  <div id="c1-lec" class="subsection">
+  <a href="c:\Users\aicelle ocao\Downloads\BASIC CONCEPTS OF JAVA PROGRAMMING LANGUAGE - Shortcut.lnk" target="_blank">BASIC CONCEPTS OF JAVA PROGRAMMING LANGUAGE</a>
+  <a href="c:\Users\aicelle ocao\Downloads\INTRODUCTION TO OBJECT ORIENTED.pdf" target="_blank">INTRODUCTION TO OBJECT ORIENTED</a>
+  <a href="c:\Users\aicelle ocao\Downloads\Java_Fundamentals.pptx (1).pdf" target="_blank">Java_Fundamentals</a>
+  <a href="c:\Users\aicelle ocao\Downloads\STRUCTURING CLASSES (1).pdf" target="_blank">STRUCTURING CLASSES</a>
+</div>
+</div>
+
+<!-- C2 -->
+<div id="c2" class="section">
+  <h3>Chapter 2</h3>
+
+  <div class="subnav">
+    <button onclick="showSub('c2-act')">Activities</button>
+    <button onclick="showSub('c2-lec')">Learning Materials</button>
+  </div>
+
+  <div id="c2-act" class="subsection active-sub">
+    <a href="https://drive.google.com/file/d/1cGbHzt67fsLIISID663xYmFvgskBp7DK/view?usp=sharing">TypeCasting</a>
+    <a href="https://drive.google.com/file/d/1NjW7Z_dHcjIeYIPd0AeMx-t1_GMy6tfN/view?usp=sharing">Unary</a>
+    <a href="https://drive.google.com/file/d/1NMgqAs6bggejerEpPrc8Jg_ParVsdz4m/view?usp=sharing">LaboratoryExercisesUnary</a>
+    <a href="https://drive.google.com/file/d/1tF5r0EFyMgr2BzPOOMLysTEdQx97jz35/view?usp=sharing">Age</a>
+  </div>
+
+  <div id="c2-lec" class="subsection">
+    <a href="c:\Users\aicelle ocao\Downloads\DECLARING IDENTIFIER CONSTANTS (1).pdf" target="_blank">CONSTANT And IDENTIFIER</a>
+    
+   
+  </div>
+</div>
+
+<!-- C3 -->
+<div id="c3" class="section">
+  <h3>Chapter 3</h3>
+
+  <div class="subnav">
+    <button onclick="showSub('c3-act')">Activities</button>
+    <button onclick="showSub('c3-lec')">Learning Materials</button>
+  </div>
+
+  <div id="c3-act" class="subsection active-sub">
+    <a href="https://drive.google.com/file/d/1mUpbMxzXgtMP3k9rYCEpcD3x0FcPXftw/view?usp=sharing">IO Activity</a>
+    <a href="https://drive.google.com/file/d/1bicmvNZE0cYKi_e9YjblKDdSk3bTsUCf/view?usp=sharing">My Info</a>
+    
+  </div>
+
+  <div id="c3-lec" class="subsection">
+      <a href="c:\Users\aicelle ocao\Downloads\INPUT_OUTPUT.pdf" target="_blank">INPUT OUTPUT STATEMENTS</a>
+</div>
+</div>
+
+<!-- C4 -->
+<div id="c4" class="section">
+  <h3>Chapter 4</h3>
+
+  <div class="subnav">
+    <button onclick="showSub('c4-act')">Activities</button>
+    <button onclick="showSub('c4-lec')">Learning Materials</button>
+  </div>
+
+  <div id="c4-act" class="subsection active-sub">
+    <a href="https://drive.google.com/file/d/1BJoqCJSpon2xcTP9RAQWiuM8cqzt7bcU/view?usp=sharing"">Month Season</a>
+    <a href="https://drive.google.com/file/d/1GcgoIeSqHqz5CRXTYIm5MZ49Gm5EVKDN/view?usp=sharing">Looping 2&3</a>
+    <a href="https://drive.google.com/file/d/11hHTVig3NR7dRPIzjtdMbtfi1lortboj/view?usp=sharing">SumPositiveNumbers</a>
+    <a href="https://drive.google.com/file/d/1QJitptP-HQNp74VGi8XtX7DYpeJw_UNn/view?usp=sharing">Branching</a>
+    <a href="https://drive.google.com/file/d/13fX9pcu6Miq_FCrRHOUk_EoKqeIPlx4n/view?usp=sharing">MultiElevator</a>
+  </div>
+
+  <div id="c4-lec" class="subsection">
+      <a href="c:\Users\aicelle ocao\Downloads\CONTROL STRUCTURES.pdf" target="_blank">CONTROL STRUCTURES PART1</a>
+      <a href="c:\Users\aicelle ocao\Downloads\CONTROL STRUCTURE PART 2.pdf"target="_blank">CONTROL STRUCTURE PART 2</a>
+      <a href="c:\Users\aicelle ocao\Downloads\CONTROL STRUCTURES PART3.pdf" target="_blank">CONTROL STRUCTURES PART 3</a>
+      <a href="c:\Users\aicelle ocao\Downloads\Control Flow Statements.pdf" target="_blank">CONTROL FLOW STATEMENTS</a>
+      <a href="c:\Users\aicelle ocao\Downloads\LABORATORY EXERCISES.pdf" target="_blank">LABORATORY EXERCISES</a>
+      <a href="c:\Users\aicelle ocao\Downloads\ELEVATOR EXERCISES- TEST CLASS.pdf" target="_blank">ELEVATOR EXERCISES- TEST CLASS</a>
+      
+
+  </div>
+</div>
+
+<!-- C5 -->
+<div id="c5" class="section">
+  <h3>Chapter 5</h3>
+
+  <div class="subnav">
+    <button onclick="showSub('c5-act')">Activities</button>
+    <button onclick="showSub('c5-lec')">Learning Materials</button>
+  </div>
+
+  <div id="c5-act" class="subsection active-sub">
+    <a href="https://drive.google.com/file/d/1MtE7222I5xuOfIkZysTDlursRdGBrfVi/view?usp=sharing%22target=%22_blank">ShirtTest</a>
+    <a href="https://drive.google.com/file/d/1hH-cVI8G657iWkpJ004L8g28m78Up8T1/view?usp=sharing">CustomerClassandTest</a>
+    <a href="https://drive.google.com/file/d/1P9jX-Y4oUntuC2sLMS2t9un7gxYFsxdN/view?usp=sharing">Payment</a>
+    <a href="https://drive.google.com/file/d/1NhXzX8XWRsiRQs6HpxdQh6KUKGrzOnGy/view?usp=sharing">OrderForm</a>
+  </div>
+
+  <div id="c5-lec" class="subsection">
+      <a href="c:\Users\aicelle ocao\Downloads\CHAPTER 5.pdf" target="_blank">CHAPTER 5</a>
+
+  </div>
+  </div>
+
+<!-- Reflection -->
+<div id="reflection" class="section">
+  <h3>Reflection</h3>
+
+  <a href="https://docs.google.com/document/d/1xdbKL-pyQPs9m5VIbJBW7AX2dVcHdIRGy4IyWmZ7VWM/edit?usp=sharing" target="_blank">MY REFLECTION</a>
+</div>
+</div>
+
+
+<script>
 function show(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.section').forEach(section=>{
+    section.classList.remove('active');
+  });
+
   document.getElementById(id).classList.add('active');
 }
+
 function toggleMode(){
   document.body.classList.toggle("dark");
 }
